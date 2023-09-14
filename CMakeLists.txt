@@ -10,6 +10,6 @@ add_subdirectory(src)
 
 add_executable(solve ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
 
-target_link_libraries(simulate 
+target_link_libraries(solve 
     PRIVATE library
     )
