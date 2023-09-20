@@ -3,7 +3,7 @@
 #include <fstream>
 
 #include "library/Grid.hpp"
-
+#include "library/Solver.hpp"
 int main (int argc, char *argv[]){
 
     // Anzahl der Argumente überprüfen.
@@ -34,15 +34,19 @@ int main (int argc, char *argv[]){
     std::cout << "Gridsize: " << gridsize << std::endl;
     std::cout << "Algorithm Type: " << algorithm_type << std::endl;
 
-    // Create sudoku grid NxN where N = gridsize
     Grid sudoku(gridsize);
 
-    // Read from sudoku-file
     sudoku.readSudokuFromFile(filename);
+    std::cout << "Anfangszustand: " << std::endl;
+    sudoku.displaySudoku();
 
-    // Display sudoku
-     sudoku.displaySudoku();
+    Solver solver;
+    bool result = solver.backtrackingAlgorithm(sudoku);
 
-    // Write to output.txt
+    std::cout << result << std::endl;
+
+    std::cout << "Endzustand: " << std::endl;
+
+    sudoku.displaySudoku();
     sudoku.writeSudokuToFile();
 }

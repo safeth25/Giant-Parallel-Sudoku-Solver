@@ -10,24 +10,20 @@ void Grid::displaySudoku() {
     for (int i = 0; i < gridSize; i++) {
         if (i > 0 && i % size == 0) {
             if(size == 3){
-                // Add a horizontal line between 3x3 subgrids
                 std::cout << "------+-------+------" << std::endl;
             }
             else if(size == 4){
-                // Add a horizontal line between 4x4 subgrids
                 std::cout << "--------+---------+---------+--------\n";
             }
             else{
-                // Add a horizontal line between 5x5 subgrids
                 std::cout << "----------+-----------+-----------+-----------+-----------\n";
             }
         }
         for (int j = 0; j < gridSize; j++) {
             if (j > 0 && j % size == 0) {
-                // Add a vertical bar to separate columns within each subgrid
                 std::cout << "| ";
             }
-            if(grid[i][j] == 0){
+            if(grid[i][j] == UNASSIGNED){
                 std::cout << "*" << ' ';
             }
             else{
@@ -36,6 +32,10 @@ void Grid::displaySudoku() {
         }
         std::cout << std::endl;
     }
+}
+
+int Grid::getCellValueAt(int row, int column){
+    return grid[row][column];
 }
 
 void Grid::readSudokuFromFile(std::string filename){
@@ -72,4 +72,8 @@ void Grid::writeSudokuToFile(){
             file_out << std::endl;
         }
     }
+}
+
+void Grid::setCellValueAt(int value, int row, int column){
+    grid[row][column] =  value;
 }
