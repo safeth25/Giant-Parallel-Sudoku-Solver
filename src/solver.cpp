@@ -11,6 +11,7 @@ bool Solver::checkRowValidity(Grid& sudoku,int num, int row){
     }
     return true;
 }
+
 bool Solver::checkColumnValidity(Grid& sudoku,int num, int column){
     // Checks the column
     for(int row = 0; row < sudoku.gridSize; row++){
@@ -20,6 +21,7 @@ bool Solver::checkColumnValidity(Grid& sudoku,int num, int column){
     }
     return true;
 }
+
 bool Solver::checkSubgridValidity(Grid& sudoku,int num, int row, int column){
     // Checks the NxN subgrid.
     int gridSize = std::sqrt(sudoku.gridSize);
@@ -35,6 +37,7 @@ bool Solver::checkSubgridValidity(Grid& sudoku,int num, int row, int column){
     }
     return true;
 }
+
 /**
  * Checks that the same number is not present in the current row, column and 3x3 subgrid
 */

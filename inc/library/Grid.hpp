@@ -9,13 +9,12 @@ class Grid{
 
     public:
     
-    // // Die Größe des Sudoku-Gitters (z.B., 9 für ein 9x9-Gitter)
+    //  Die Größe des Sudoku-Gitters (z.B., 9 für ein 9x9-Gitter)
     int gridSize;
 
     // Die Matrix zur Speicherung der Sudoku-Zahlen
     std::vector<std::vector<int>> grid;
 
-   // public:
     Grid(int gridSize);
 
     void displaySudoku();

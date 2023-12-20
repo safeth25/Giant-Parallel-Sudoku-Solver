@@ -4,6 +4,7 @@
 
 #include "library/Grid.hpp"
 #include "library/Solver.hpp"
+
 int main (int argc, char *argv[]){
 
     // Anzahl der Argumente überprüfen.
@@ -42,8 +43,6 @@ int main (int argc, char *argv[]){
 
     Solver solver;
     bool result = solver.backtrackingAlgorithm(sudoku);
-
-    std::cout << result << std::endl;
 
     std::cout << "Endzustand: " << std::endl;
 
